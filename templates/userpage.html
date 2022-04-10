@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if session.name %}
+Welcome {{session.name}}
+{% else %}
+Not yet Login
+{% endif %}
+</body>
+</html>
