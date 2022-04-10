@@ -69,7 +69,7 @@ def view_patient():
     cursor=connection.cursor()
     count=cursor.execute("select * from patient")
     result=cursor.fetchall()
-    return render_template("viewall.html",patient=result)
+    return render_template("diaplayall.html",patient=result)
 
 @hospital.route("/search",methods = ["GET","POST"])
 def search_patient():
@@ -79,9 +79,9 @@ def search_patient():
         cursor = connection.cursor()
         count = cursor.execute("select * from patient where mobnumber="+getmobnumber)
         result = cursor.fetchall()
-        return render_template("search.html", searchpatient=result)
+        return render_template("find.html", searchpatient=result)
 
-    return render_template("search.html")
+    return render_template("find.html")
 
 @hospital.route("/delete",methods = ["GET","POST"])
 def delete_patient():
